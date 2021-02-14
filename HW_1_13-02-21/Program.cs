@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Threading;
 
 namespace HW_1_13_02_21
 {
@@ -6,7 +8,10 @@ namespace HW_1_13_02_21
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Thread SelectThread = new Thread(new ThreadStart(Client.Select));
+            SelectThread.Start();
+            SelectThread.Join();
+
         }
     }
 }
