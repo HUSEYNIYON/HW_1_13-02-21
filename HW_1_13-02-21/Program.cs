@@ -8,10 +8,17 @@ namespace HW_1_13_02_21
     {
         static void Main(string[] args)
         {
-            Thread SelectThread = new Thread(new ThreadStart(Client.Select));
-            SelectThread.Start();
-            SelectThread.Join();
 
+
+
+
+
+            //Client.Insert();
+            //Client.Select();
+            //Client.Update();
+            //Client.Select();
+            //Client.UpdateById();
+            //Client.DeleteById();
         }
     }
 }
