@@ -8,6 +8,9 @@ namespace HW_1_13_02_21
     {
         static void Main(string[] args)
         {
+            TimerCallback timerCallback = new TimerCallback(Client.FindUpdatedBalance);
+            Timer timer = new Timer(timerCallback, Client.ClientList, 0, 1000);
+
             while (true)
             {
                 Console.WriteLine(@"Выбирите комманду:
@@ -18,28 +21,26 @@ namespace HW_1_13_02_21
                 switch (int.Parse(Console.ReadLine()))
                 {
                     case 1:
-                        Client.Insert();
+                        Thread insert = new Thread(new ThreadStart(Client.Insert));
+                        insert.Start(); insert.Join();
                         break;
                     case 2:
-                        Client.Select();
+                        Thread select = new Thread(new ThreadStart(Client.Select));
+                        select.Start(); select.Join();
                         break;
                     case 3:
-                        Client.UpdateById();
+                        Thread update = new Thread(new ThreadStart(Client.UpdateById));
+                        update.Start(); update.Join();
                         break;
                     case 4:
-                        Client.DeleteById();
+                        Thread delete = new Thread(new ThreadStart(Client.DeleteById));
+                        delete.Start(); delete.Join();
                         break;
                     default:
-                        return;
+                        Console.WriteLine("Не правильная команда!");
                         break;
                 }
             }
-            //Client.Insert();
-            //Client.Select();
-            //Client.Update();
-            //Client.Select();
-            //Client.UpdateById();
-            //Client.DeleteById();
         }
     }
 }
