@@ -10,7 +10,6 @@ namespace HW_1_13_02_21
         {
             TimerCallback timerCallback = new TimerCallback(Client.FindUpdatedBalance);
             Timer timer = new Timer(timerCallback, Client.ClientList, 0, 1000);
-
             while (true)
             {
                 Console.WriteLine(@"Выбирите комманду:
@@ -40,7 +39,7 @@ namespace HW_1_13_02_21
                         Console.WriteLine("Не правильная команда!");
                         break;
                 }
-            }
+            }   
         }
     }
 }
