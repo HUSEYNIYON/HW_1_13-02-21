@@ -32,6 +32,9 @@ namespace HW_1_13_02_21
             Balance = balance;
             PassportNO = passportNO;
         }
+        /// <summary>
+        /// Select all data from List
+        /// </summary>
         public static void Select()
         {
             foreach (var item in ClientList)
@@ -40,6 +43,9 @@ namespace HW_1_13_02_21
                     $"Balace: {item.Balance}|\t PassportNO: {item.PassportNO}");
             }
         }
+        /// <summary>
+        /// Insert data to List
+        /// </summary>
         public static void Insert()
         {
             Console.Clear();
@@ -58,6 +64,9 @@ namespace HW_1_13_02_21
             ClientList.Add(clients);
             CheckClientList.Add(clients);
         }
+        /// <summary>
+        /// Update data from List
+        /// </summary>
         public static void UpdateById()
         {
             Console.Clear();
@@ -84,6 +93,9 @@ namespace HW_1_13_02_21
                 }
             }
         }
+        /// <summary>
+        /// Deleted from List
+        /// </summary>
         public static void DeleteById()
         {
             Console.Clear();
@@ -100,6 +112,10 @@ namespace HW_1_13_02_21
                 }
             }
         }
+        /// <summary>
+        /// Check Balance of clients
+        /// </summary>
+        /// <param name="objects"></param>
         public static void FindUpdatedBalance(object objects)
         {
             List<Client> list = objects as List<Client>;
