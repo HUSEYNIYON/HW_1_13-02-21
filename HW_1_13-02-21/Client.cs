@@ -8,7 +8,6 @@ namespace HW_1_13_02_21
     {
         public static List<Client> ClientList = new List<Client>();
         public static List<Client> CheckClientList = new List<Client>();
-        
         public static int newID ;
         public int Id { get; set; }
         public string FirstName { get; set; }
@@ -25,7 +24,6 @@ namespace HW_1_13_02_21
             Balance = balance;
             PassportNO = passportNO;
         }
-
         public Client(string firstName, string lastName, string middleName, decimal balance, string passportNO)
         {
             FirstName = firstName;
@@ -34,7 +32,6 @@ namespace HW_1_13_02_21
             Balance = balance;
             PassportNO = passportNO;
         }
-
         public static void Select()
         {
             foreach (var item in ClientList)
